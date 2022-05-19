@@ -788,7 +788,7 @@
   dependencies:
     "pug" "^3.0.2"
 
-"hexo-renderer-stylus@^2.0.0":
+"hexo-renderer-stylus@^2.0.1":
   "integrity" "sha512-1S4AG8RtzWqVrqKIYv2AJ4UYms5SHDjkdYS7IiGwgUejL24agbTktpAbnH2cG1JWZ15SRqYN0UGB9aAoSAgvEA=="
   "resolved" "https://registry.npmjs.org/hexo-renderer-stylus/-/hexo-renderer-stylus-2.0.1.tgz"
   "version" "2.0.1"
