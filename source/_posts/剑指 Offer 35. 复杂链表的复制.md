@@ -2,7 +2,7 @@
 title: 剑指 Offer 35. 复杂链表的复制
 date: 2022-05-06 10:02:15
 tags: 丢失在记忆中的算法
-cover: https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/01/09/e1.png
+cover: ./../images/剑指 Offer 35. 复杂链表的复制-e1.png
 
 ---
 #### [剑指 Offer 35. 复杂链表的复制](https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/)
