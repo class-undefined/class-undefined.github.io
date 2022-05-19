@@ -1,0 +1,307 @@
+<!DOCTYPE html><html lang="zh" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>剑指 Offer 10- II. 青蛙跳台阶问题 | 野漫横江's blog</title><meta name="keywords" content="强化训练,动态规划"><meta name="author" content="class-undefined"><meta name="copyright" content="class-undefined"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="剑指 Offer 10- II. 青蛙跳台阶问题 碎碎念 解析 如何规划？ 代码 杂谈 碎碎话 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。    示例 1： 12输入：n &#x3D; 2输出：2  示例 2： 12输入：n &#x3D; 7输出：21  示例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="剑指 Offer 10- II. 青蛙跳台阶问题">
+<meta property="og:url" content="https://class-undefined.github.io/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/index.html">
+<meta property="og:site_name" content="野漫横江&#39;s blog">
+<meta property="og:description" content="剑指 Offer 10- II. 青蛙跳台阶问题 碎碎念 解析 如何规划？ 代码 杂谈 碎碎话 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。    示例 1： 12输入：n &#x3D; 2输出：2  示例 2： 12输入：n &#x3D; 7输出：21  示例">
+<meta property="og:locale">
+<meta property="og:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+<meta property="article:published_time" content="2022-05-15T03:22:55.000Z">
+<meta property="article:modified_time" content="2022-05-19T07:24:05.779Z">
+<meta property="article:author" content="class-undefined">
+<meta property="article:tag" content="强化训练">
+<meta property="article:tag" content="动态规划">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://class-undefined.github.io/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '剑指 Offer 10- II. 青蛙跳台阶问题',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-19 15:24:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">野漫横江's blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">剑指 Offer 10- II. 青蛙跳台阶问题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-05-15T03:22:55.000Z" title="Created 2022-05-15 11:22:55">2022-05-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-05-19T07:24:05.779Z" title="Updated 2022-05-19 15:24:05">2022-05-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">Comments:</span><a href="/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h4 id="剑指-Offer-10-II-青蛙跳台阶问题"><a href="#剑指-Offer-10-II-青蛙跳台阶问题" class="headerlink" title="剑指 Offer 10- II. 青蛙跳台阶问题"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">剑指 Offer 10- II. 青蛙跳台阶问题</a></h4><ul>
+<li><a href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5">碎碎念</a></li>
+<li><a href="#%E8%A7%A3%E6%9E%90">解析</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E8%A7%84%E5%88%92">如何规划？</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a></li>
+<li><a href="#%E6%9D%82%E8%B0%88">杂谈</a></li>
+<li><a href="#%E7%A2%8E%E7%A2%8E%E8%AF%9D">碎碎话</a><blockquote>
+<p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 <code>n</code> 级的台阶总共有多少种跳法。</p>
+<p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
+</blockquote>
+</li>
+</ul>
+<p>示例 1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 2</span><br><span class="line">输出：2</span><br></pre></td></tr></table></figure>
+
+<p>示例 2：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 7</span><br><span class="line">输出：21</span><br></pre></td></tr></table></figure>
+
+<p>示例 3：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = 0</span><br><span class="line">输出：1</span><br></pre></td></tr></table></figure>
+
+<p>提示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0 &lt;= n &lt;= 100</span><br></pre></td></tr></table></figure>
+
+<h3 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h3><p>今天是2022年的5月14日， 周六</p>
+<p>最近总觉得自己学习的效率不太高，一直在寻找一种比较适合自己的方式。一直以来我都懒于做时间规划，这也导致我做事经常不能够集中。所以也尝试每天列一些Todo清单，完成以后就把它✅掉，于是在做一天事下来后发现，原来自己每天完成的东西还是挺多的。（成就感油然而生！）</p>
+<p>倒霉的是可能最近跑步过余猛烈，右脚现在生疼，不便走路。于是约好今天去划船。（好像并没有因果关系，不过来三亚三年，也没有真正玩过这边的水。这座城市承载了我三年记忆，而我却从未感受到它多少的存在，我见的最多的是屏幕上的字符，它的山水烟火，很遗憾没能使我驻足，并不需要依靠什么自制力，单单朴素的钱包就足够抵御这样的吸引… 如今不久就要离开这座城市，而日后朋友们也都相继离开，他们走后，我大抵不会有多大机会再回到这片承载了我三年记忆的城市了。）</p>
+<p>所以趁这不太久的时间，尽量体会一下这片风土人情吧。</p>
+<p>感慨就说到这里，白天还是继续学习吧，我来聊聊困惑我长久的动态规划。（事实上就在写了这篇文章时，我仍然对着块没有多大的顿悟，仅有一些经验）</p>
+<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>这是一道经典的动态规划题目。经典到没有解析。X</p>
+<p>首先，如何想到使用动态规划？（当然我在没练动态规划之前肯定是想不到这个的）</p>
+<p>动态规划最首要的特征是，当前的状态是可以通过之前的状态推算的，是逐级递推的。所以，如果有题目能够满足这样的条件，那么它大抵是能够使用动态规划的思路去解决。</p>
+<p>在这题中，青蛙可以一次可以跳上1级台阶，也可以一次跳上2级台阶。</p>
+<p>那么则有：</p>
+<table>
+<thead>
+<tr>
+<th>n</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ans</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>5</td>
+<td>8</td>
+</tr>
+</tbody></table>
+<p>看着有点像斐波那契数列对吧，事实上确实是。</p>
+<p>那么为什么会这样，我们来捋一捋，看看能不能发现什么规律。</p>
+<p>n&#x3D;1</p>
+<ul>
+<li><p>只需要跳一个台阶。次数为1</p>
+<p>总次数为1</p>
+</li>
+</ul>
+<p>n&#x3D;2</p>
+<ul>
+<li><p>一次跳2个台阶，次数为1</p>
+</li>
+<li><p>在n为1的基础上再跳1个台阶，n为1的次数为1，所以该次数也为1</p>
+<p>所以总次数为2</p>
+</li>
+</ul>
+<p>n&#x3D;3</p>
+<ul>
+<li><p>在n为1的基础上跳2个台阶，n为1的次数为1，所以该次数也为1</p>
+</li>
+<li><p>在n为2的基础上跳1个台阶，然而n为2有两种情况，所以该次数为2</p>
+<p>所以总次数为3</p>
+</li>
+</ul>
+<p>n&#x3D;4</p>
+<p>​	由于青蛙一次最多只能跳2个台阶，这意味着n&#x3D;4时，它的落脚前最近的位置是在n&#x3D;2，（n&#x3D;1时青蛙最多只能到达3）这个应该能够理解，未来忘记了思路的自己，再看到这道题，有没有恍然大悟的感觉（我会庆幸此时写下文章的自己）。</p>
+<ul>
+<li><p>在n为2的基础上跳2个台阶，n为2的次数为2，所以该次数也为2</p>
+</li>
+<li><p>在n为3的基础上跳1个台阶，然而n为3有3种情况，所以该次数为3</p>
+<p>所以总次数为5</p>
+</li>
+</ul>
+<p>n&#x3D;5</p>
+<p>n&#x3D;6</p>
+<p>…</p>
+<p>如此。是否会有点感觉呢。</p>
+<p>注意一点，这种句式可能会使我的解释给人造成误导，即</p>
+<blockquote>
+<p>在<code>n</code>为<code>x</code>的基础上跳<code>x</code>个台阶，<code>n</code>为<code>x</code>的次数为<code>k</code>，所以该次数也为<code>k</code></p>
+</blockquote>
+<p>你可能会疑惑为什么也是<code>k</code>，而不是<code>k + 1</code>呢，因为我初学动态规划也会有这样的疑问，并且在最近我才想到合理的解释，也许是悟性不够吧。</p>
+<p>所以这个疑问的答案是什么呢？</p>
+<p>我的回答是，向来如此。是的，它本应该就是这样的。（废话）</p>
+<p>因为，当<code>n = 4</code>时，若此时🐸在第2级台阶，它要达到4，那么它必须跳2级，这个数列的可能性在给出<code>n</code>时，就已经确定了。</p>
+<p>举例，</p>
+<p>先给出<code>n = 2</code>，<code>n = 3</code>的可能性，这里<code>step</code>代表其跳到指定台阶的不同步数方案。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">2</span></span><br><span class="line">step = [[<span class="number">1</span>, <span class="number">1</span>], [<span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">n = <span class="number">3</span></span><br><span class="line">step = [[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+
+<p>那么<code>n = 4</code>则有（用我在上方列举的情况做对比）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="number">4</span> </span><br><span class="line">step_by_2 = [[<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">2</span>]] <span class="comment"># 在 n = 2的基础上有</span></span><br><span class="line">step_by_3 = [[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>]] <span class="comment"># 在 n = 3的基础上有</span></span><br><span class="line">step = [[<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>], [<span class="number">2</span>, <span class="number">2</span>], [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>], [<span class="number">2</span>, <span class="number">1</span>, <span class="number">1</span>]] <span class="comment"># 两者合并即所有情况</span></span><br></pre></td></tr></table></figure>
+
+<p>所以，也就不存在+1一说，因为若要到达<code>n</code>级台阶，那么它本就是这样发展的。若在2级台阶时，<code>step = [1, 1]</code>那么下一步就必然是2，<code>step = [1, 1, 2]</code>，它是一个整体，逻辑上与2级台阶的<code>step = [1, 1]</code>等同，仅仅是<code>step</code>数列长度不一样，这个长度不一样是其台阶级数决定的，仅此而已。若+1，就没有意义了。（如果还是不能理解我说的意思，需要自己去悟了，我无法用更好的语言表达了，为此我深感抱歉）</p>
+<h3 id="如何规划？"><a href="#如何规划？" class="headerlink" title="如何规划？"></a>如何规划？</h3><p>由上部分的解析我们已经可以知道，当前台阶的步数仅与前两次台阶计数的步数有关。</p>
+<p>约定一个长度为<code>n</code>的数组<code>dp</code>，规定<code>dp[i]</code>为青蛙跳到第<code>i</code>级台阶的跳法。由于以上的分析我们不难知道，当前台阶的跳法为前两个的台阶的跳法之和。</p>
+<p>即<code>dp[i] = dp[i - 1] + dp[i - 2]</code>，这就是本题动态规划的状态转移方程，没错，就是斐波那契的表达式。</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numWays</span><span class="params">(<span class="type">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span>* dp = <span class="keyword">new</span> <span class="type">int</span>[n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> mod = <span class="number">1000000007</span>; <span class="comment">// 题目要求取模，否则n过大则答案会溢出</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            dp[i] = (dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>]) % mod; <span class="comment">// 状态转移方程</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[n]; <span class="comment">// 递推到n即为答案</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h3 id="杂谈"><a href="#杂谈" class="headerlink" title="杂谈"></a>杂谈</h3><p>今天去体验了一番游艇，还下潜游了一会。想着以后这座城市的日子已进入倒计时，第一次踏入这片土地的场景仍印在脑海，心中仍然有些唏嘘。我总是这样的怀旧，曾经的日子距离今天越久，仿佛那些日子相比于今天就越快乐。这不好。</p>
+<p>Anyway，今天也很快乐。</p>
+<h3 id="碎碎话"><a href="#碎碎话" class="headerlink" title="碎碎话"></a>碎碎话</h3><blockquote>
+<p>无知的少年依旧无知，追寻的人生依旧还在路上。</p>
+</blockquote>
+<p>2022年5月14日 星期六 江南四大才子出海顺利归来 于寝室。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="https://class-undefined.github.io">class-undefined</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://class-undefined.github.io/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/">https://class-undefined.github.io/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%BC%BA%E5%8C%96%E8%AE%AD%E7%BB%83/">强化训练</a><a class="post-meta__tags" href="/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">动态规划</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/05/19/hello-world/"><img class="prev-cover" src="https://u-pic.oss-cn-beijing.aliyuncs.com/uPic/WOBSmg.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">Hello World</div></div></a></div><div class="next-post pull-right"><a href="/2022/05/14/%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96/"><img class="next-cover" src="/./../images/%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96-Xnip2022-05-07_11-04-52.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">433. 最小基因变化</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comment</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">class-undefined</div><div class="author-info__description">人海浮沉几万里,此心安处是吾乡.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%91%E6%8C%87-Offer-10-II-%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">剑指 Offer 10- II. 青蛙跳台阶问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%8E%E7%A2%8E%E5%BF%B5"><span class="toc-number"></span> <span class="toc-text">碎碎念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90"><span class="toc-number"></span> <span class="toc-text">解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E8%A7%84%E5%88%92%EF%BC%9F"><span class="toc-number"></span> <span class="toc-text">如何规划？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number"></span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%82%E8%B0%88"><span class="toc-number"></span> <span class="toc-text">杂谈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%8E%E7%A2%8E%E8%AF%9D"><span class="toc-number"></span> <span class="toc-text">碎碎话</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/19/hello-world/" title="Hello World"><img src="https://u-pic.oss-cn-beijing.aliyuncs.com/uPic/WOBSmg.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/05/19/hello-world/" title="Hello World">Hello World</a><time datetime="2022-05-19T02:54:32.627Z" title="Created 2022-05-19 10:54:32">2022-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/" title="剑指 Offer 10- II. 青蛙跳台阶问题"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指 Offer 10- II. 青蛙跳台阶问题"/></a><div class="content"><a class="title" href="/2022/05/15/%E9%9D%92%E8%9B%99%E8%B7%B3%E5%8F%B0%E9%98%B6II/" title="剑指 Offer 10- II. 青蛙跳台阶问题">剑指 Offer 10- II. 青蛙跳台阶问题</a><time datetime="2022-05-15T03:22:55.000Z" title="Created 2022-05-15 11:22:55">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/14/%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96/" title="433. 最小基因变化"><img src="/./../images/%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96-Xnip2022-05-07_11-04-52.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="433. 最小基因变化"/></a><div class="content"><a class="title" href="/2022/05/14/%E6%9C%80%E5%B0%8F%E5%9F%BA%E5%9B%A0%E5%8F%98%E5%8C%96/" title="433. 最小基因变化">433. 最小基因变化</a><time datetime="2022-05-14T14:16:48.000Z" title="Created 2022-05-14 22:16:48">2022-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/06/%E5%89%91%E6%8C%87%20Offer%2035.%20%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/" title="剑指 Offer 35. 复杂链表的复制"><img src="/./../images/./../images/%E5%89%91%E6%8C%87%20Offer%2035.%20%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6-e1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指 Offer 35. 复杂链表的复制"/></a><div class="content"><a class="title" href="/2022/05/06/%E5%89%91%E6%8C%87%20Offer%2035.%20%E5%A4%8D%E6%9D%82%E9%93%BE%E8%A1%A8%E7%9A%84%E5%A4%8D%E5%88%B6/" title="剑指 Offer 35. 复杂链表的复制">剑指 Offer 35. 复杂链表的复制</a><time datetime="2022-05-06T02:02:15.000Z" title="Created 2022-05-06 10:02:15">2022-05-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By class-undefined</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="Chat"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="Scroll To Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '08769144a6d9510fa8b0',
+      clientSecret: '5c2054d59f3bc9b815b6d0ba6a811e22fdad130f',
+      repo: 'class-undefined.github.io',
+      owner: 'class-undefined',
+      admin: ['class-undefined'],
+      id: 'b43f3805233780356380c9e09b4a64e2',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
