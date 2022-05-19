@@ -5,7 +5,7 @@ tags:
     - 力扣那些事
     - 丢失在记忆中的算法
 cover: ./../images/./../images/剑指%20Offer%2035.%20复杂链表的复制-e1.png
-
+description: 复杂? 都是纸老虎!
 ---
 #### [剑指 Offer 35. 复杂链表的复制](https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/)
 
