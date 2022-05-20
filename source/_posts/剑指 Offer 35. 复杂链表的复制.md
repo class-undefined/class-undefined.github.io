@@ -4,7 +4,7 @@ date: 2022-05-06 10:02:15
 tags: 
     - 力扣那些事
     - 丢失在记忆中的算法
-cover: ./../images/./../images/剑指%20Offer%2035.%20复杂链表的复制-e1.png
+cover: https://pic.imgdb.cn/item/628777840947543129603811.png
 description: 复杂? 都是纸老虎!
 ---
 #### [剑指 Offer 35. 复杂链表的复制](https://leetcode.cn/problems/fu-za-lian-biao-de-fu-zhi-lcof/)
@@ -61,7 +61,7 @@ description: 复杂? 都是纸老虎!
 
 举个例子，假设有单链表`7->13->11->null`，如图
 
-![DFC2850DF3C5D15432E9CF490884CAE9](./../images/剑指%20Offer%2035.%20复杂链表的复制-1.png)
+![DFC2850DF3C5D15432E9CF490884CAE9](https://pic.imgdb.cn/item/628777840947543129603808.png)
 
 #### 终止条件是什么
 

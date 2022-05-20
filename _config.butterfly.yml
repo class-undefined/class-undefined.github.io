@@ -88,7 +88,7 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: images/background.jpg
+index_img: https://pic.imgdb.cn/item/628778060947543129608981.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img:
@@ -198,10 +198,10 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: images/wechat.png
+    - img: https://pic.imgdb.cn/item/628776bc09475431295fc8db.png
     #   link:
       text: 微信
-    - img: images/alipay.png
+    - img: https://pic.imgdb.cn/item/628776bc09475431295fc8d3.png
     #   link:
       text: 支付宝
 
@@ -806,7 +806,7 @@ pangu:
 # Lazyload (圖片懶加載)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
   blur: false
@@ -879,7 +879,7 @@ CDN:
     # canvas_ribbon:
     canvas_fluttering_ribbon: https://unpkg.com/butterfly-extsrc@1.1.1/dist/canvas-fluttering-ribbon.min.js
     # canvas_nest:
-    # lazyload:
+    lazyload: https://unpkg.com/vanilla-lazyload@17.8.1/dist/lazyload.iife.min.js
     # instantpage:
     # typed:
     pangu: https://unpkg.com/pangu@4/dist/browser/pangu.min.js
