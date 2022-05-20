@@ -877,22 +877,22 @@ CDN:
     # katex_copytex_css:
     # mermaid:
     # canvas_ribbon:
-    # canvas_fluttering_ribbon:
+    canvas_fluttering_ribbon: https://unpkg.com/butterfly-extsrc@1.1.1/dist/canvas-fluttering-ribbon.min.js
     # canvas_nest:
     # lazyload:
     # instantpage:
     # typed:
-    # pangu:
-    # fancybox_css_v4:
-    # fancybox_v4:
+    pangu: https://unpkg.com/pangu@4/dist/browser/pangu.min.js
+    fancybox_css_v4: https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.css
+    fancybox_v4: https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.umd.js
     # medium_zoom:
-    # snackbar_css:
-    # snackbar:
+    snackbar_css: https://cdn.bootcdn.net/ajax/libs/node-snackbar/0.1.9/snackbar.min.css
+    snackbar: https://cdn.bootcdn.net/ajax/libs/node-snackbar/0.1.9/snackbar.min.js
     # activate_power_mode:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    # fontawesomeV6:
+    fontawesomeV6: https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     # aplayer_css:
