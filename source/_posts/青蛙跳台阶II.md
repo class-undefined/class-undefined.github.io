@@ -6,6 +6,7 @@ tags:
     - 强化训练
     - 动态规划
 description: 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+cover: ./../images/青蛙跳台阶-cover.jpeg
 ---
 #### [剑指 Offer 10- II. 青蛙跳台阶问题](https://leetcode.cn/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/)
 - [碎碎念](#碎碎念)
