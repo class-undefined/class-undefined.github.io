@@ -3,17 +3,17 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 野漫横江's blog
+title: 野漫横江
 subtitle: '人海浮沉几万里,此心安处是吾乡.'
 description: '人海浮沉几万里,此心安处是吾乡.'
 keywords:
-author: class-undefined
+author: 野漫横江
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://class-undefined.github.io
+url: https://class-undefined.cn
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
