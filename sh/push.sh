@@ -1,3 +1,4 @@
+git checkout blog
 git push
 git checkout master
 git merge blog
