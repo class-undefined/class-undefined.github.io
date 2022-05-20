@@ -1,3 +1,18 @@
 #card-info-btn {
+    color: #409EFF !important;
     border-radius: 4px;
+    border: 1px solid #A0CFFF;
+    background-color: #ECF5FF !important;
+}
+#card-info-btn:hover {
+    color: #FFFFFF !important;
+    border-color: #409EFF;
+    background-color: #409EFF !important;
+    outline: none;
+}
+#card-info-btn:active {
+    color: #FFFFFF !important;
+    border-color: #337ECC !important;
+    background-color: #337ECC !important;
+    outline: none;
 }
