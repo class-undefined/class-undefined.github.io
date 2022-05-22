@@ -1,0 +1,279 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>程序是怎样跑起来的 | 野漫横江</title><meta name="keywords" content="计算机"><meta name="author" content="野漫横江"><meta name="copyright" content="野漫横江"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从0到1学计算机!">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序是怎样跑起来的">
+<meta property="og:url" content="https://class-undefined.cn/posts/cl3h5g2uq000b98km3ujp1nua/index.html">
+<meta property="og:site_name" content="野漫横江">
+<meta property="og:description" content="从0到1学计算机!">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.imgdb.cn/item/628776bc09475431295fc8b2.png">
+<meta property="article:published_time" content="2022-05-22T10:19:58.000Z">
+<meta property="article:modified_time" content="2022-05-22T10:21:04.755Z">
+<meta property="article:author" content="野漫横江">
+<meta property="article:tag" content="计算机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/628776bc09475431295fc8b2.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://class-undefined.cn/posts/cl3h5g2uq000b98km3ujp1nua/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.1.1/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/node-snackbar/0.1.9/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?144d07a0d12371a195c13d76d55867fd";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=UA-229533001-1"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-229533001-1');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 野漫横江","link":"链接: ","source":"来源: 野漫横江","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '程序是怎样跑起来的',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-22 18:21:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/theme/main.css"><meta name="generator" content="Hexo 6.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1399226280&amp;s=640" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/628776bc09475431295fc8b2.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">野漫横江</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-archive"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">程序是怎样跑起来的</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-22T10:19:58.000Z" title="发表于 2022-05-22 18:19:58">2022-05-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-22T10:21:04.755Z" title="更新于 2022-05-22 18:21:04">2022-05-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.7k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="程序是怎样跑起来的"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/posts/cl3h5g2uq000b98km3ujp1nua/#post-comment"><span class="gitalk-comment-count"></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="高级程序语言中变量的数据类型表示的意义是什么？"><a href="#高级程序语言中变量的数据类型表示的意义是什么？" class="headerlink" title="高级程序语言中变量的数据类型表示的意义是什么？"></a>高级程序语言中变量的数据类型表示的意义是什么？</h3><blockquote>
+<p>数据类型有两个作用</p>
+<ul>
+<li><p>占用内存空间的大小</p>
+</li>
+<li><p>如何解释内存数据</p>
+<hr>
+<p>变量是内存地址的抽象</p>
+</li>
+</ul>
+</blockquote>
+<h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><blockquote>
+<p>使用栈结构很好的解决了函数调用（在执行前将函数指令的下一个地址入栈，指令执行完毕，地址出栈，CPU即可知道下一个指令的地址）和内存地址管理，后调的函数必然先销毁，所以对应的临时变量（内存地址）也需要先回收（变量的生命周期[GC的引用计数]）。这就是栈！</p>
+</blockquote>
+<h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><blockquote>
+<p>协调好输入与处理时机之间的关系，排队的机制是很方便的。</p>
+<p>在内存上，实现这种机制的方式就是队列。当我们需要处理通讯中发送的数据时，或由同时运行的多个程序所发送过来的数据时，会用到这种对队列中存储的不规则数据进行处理的方法。</p>
+<p>队列一般是以环状缓冲区（ring buffer）的方式来实现的。</p>
+<p>排成纵队，从队头出队，从队尾入队，随着不停的出队，由于队伍没有整体前移，腾出来的无效内存越来越多。排成环队，队尾追队头，随着出队，腾出来的内存可被用来入队，节约内存。</p>
+</blockquote>
+<p>今天看完了《程序是怎样跑起来的》这本书，总算对程序以及程序背后的运行机制的概念有了一些新的认识，也消除了一些疑问。</p>
+<h3 id="为什么计算机是二进制？"><a href="#为什么计算机是二进制？" class="headerlink" title="为什么计算机是二进制？"></a>为什么计算机是二进制？</h3><p>数据在计算机的存储，执行，在芯片内部都是一个个电路开关，0与1实际上是物理电信号高低电位的映射。为了解决负数计算如<code>1 + (-1)</code>，于是产生了补码。二进制与十进制，都是对同一种数据的不同表达形式，而计算机内部使用二进制，是与其内部构造使用高低电位来表达两种状态而选择的最恰当的方式。</p>
+<h3 id="补码从何而来？"><a href="#补码从何而来？" class="headerlink" title="补码从何而来？"></a>补码从何而来？</h3><p>补码从何而来？存在即合理，不如换个角度思考，补码的存在是为了解决什么问题。</p>
+<p>它的存在是为了解决计算机的减法问题。</p>
+<p>举个简单的例子，我们都知道<code>1 + (-1) == 0</code>，然而二进制该怎样表达这个等式呢？我们都知道计算机只能执行加法运算，也知道减法在计算机中也是加法，只是加了负数。可是，这样的负数如何才能得到呢？有人会说二进制数有符号位，正数的符号为为<code>0</code>，负数为<code>1</code>，<code>-1</code>可以表示成<code>1000 0001</code>，但是显然，<code>0000 0001 + 1000 0001 != 0000 0000</code>。这样的计算结果是错误的 。所以我们需要一种新的表达方式，利用计算溢出，于是有了<strong>补码</strong>。</p>
+<p><code>1</code>的二进制表示为<code>0000 0001</code>，<code>-1</code>用<code>?</code>表示，则有<code>0000 0001 + ? == 0000 0000</code>。</p>
+<p>那么利用计算机的最高位溢出特性，显然可以知道<code>-1</code>的补码为<code>1111 1111</code>。</p>
+<p>如此，<code>0000 0001 + 1111 1111 == 0000 0000</code>就成立了，<strong>因为高位的1被舍弃了</strong>。</p>
+<p>更一般的，设二进制数<code>x</code>，<code>x &gt; 0</code>，则<code>-x</code>的补码为<code>!x + 1</code>，也就是<code>x</code>的各位取反后加1。</p>
+<p>以<code>1</code>为例，<code>1</code>的二进制为<code>0000 0001</code>，根据以上公式我们可得<code>-1 == !(1) + 1 == 1111 1110 + 1 == 1111 1111</code>。</p>
+<p>如此就得出了负数的补码。</p>
+<p>那么正数呢？</p>
+<p>我们已经知道，补码的发明，解决了计算机的减法问题，解决了负数在计算机的表达问题。</p>
+<p>对于正数，补码就是其本身。</p>
+<h3 id="浮点数"><a href="#浮点数" class="headerlink" title="浮点数"></a>浮点数</h3><p>应对生活中的小数，计算机也有浮点数表达方式。在32位的数据中，IEEE规定了浮点数的表达方式，其中1位符号位，8位指数位23位尾数。这曾经浮点数也让我产生了一些错误认知，我一度以为它在计算机内可以表示任意数值，因为数学告诉我在非0长度的区间，数应该是无限的。但现在才能理解，32位数据这意味着其表示范围只有2^32个数，并不是无限的。二进制浮点数不可能表示任意小数，它也面临着精度问题，就像十进制小数也不能准确表达1&#x2F;3一样。</p>
+<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3><p>由于计算机只能处理数字，所以人类生活中的字符，符号，全都靠的是编码映射。这也是计算机擅长的处理方式。</p>
+<h3 id="调用栈"><a href="#调用栈" class="headerlink" title="调用栈"></a>调用栈</h3><p>函数的调用栈，目的是切换指令的上下文环境，解决了程序执行顺序的问题。也帮助了寄存器清除局部变量。</p>
+<h3 id="硬盘"><a href="#硬盘" class="headerlink" title="硬盘"></a>硬盘</h3><p>内存造价昂贵，数据读取速度快，而硬盘较为低廉，数据读取速度慢。但较为低廉这意味着我们花同样的价钱，可以买到容量较大的硬盘。我们可以把文件、程序存储在硬盘，需要用到时再读取内存让cpu运行计算。<br>扇区是硬盘物理读写的最小单位，一个扇区一般为512字节。在windows中，硬盘读写单位是扇区的整数倍，称为簇，不同的文件不能存放在同一簇中。因此不管是多小的文件，都会占用1簇的空间。所以你会发现如果一个文件夹里有非常多的细碎小文件并且总共容量很大的话，无论是对这个文件夹进行复制或是删除操作，花费的时间都相对漫长，但如果把文件夹打包成压缩包形成一个整体再进行复制或是删除操作，速度将大大加快。</p>
+<h3 id="数据压缩"><a href="#数据压缩" class="headerlink" title="数据压缩"></a>数据压缩</h3><p>数据含有重复表达的信息，这意味着浪费了内存，于是为了降低这样的浪费，就有人提出了数据压缩。数据压缩分为可逆压缩和非可逆压缩。比如图片有损压缩方面，如jpg格式等，压缩数据基本不会影响图片效果，同里也有音频的mp3格式等。但文本数据以及程序则必须使用可逆压缩，否则原有的信息缺失将无法得到正确的表达。<a href="/posts/cl3emxu3c0006s8kmgj3l9q3f/">哈夫曼编码</a>则是经典的可逆压缩算法。</p>
+<h3 id="程序跨平台"><a href="#程序跨平台" class="headerlink" title="程序跨平台"></a>程序跨平台</h3><p>程序不能直接操作硬件，而是调用操作系统提供的接口进行间接操作。不同CPU架构的指令集可能不同，这也就意味着编译出的程序在不同操作系统下可能无法正常运行，因为指令集无法正确被其CPU处理，于是延伸出了程序如何实现跨平台运行的问题。跨平台有两种方式，源码级别的跨平台以及虚拟环境的跨平台。源码级别的跨平台，在Unix的FreeBSD存在一种叫做Ports的机制，能够根据当前的运行环境来编译出对应系统能够运行的本地代码。简称一次编写，到处编译。<br>这种方式略微繁琐，于是又出现了虚拟运行环境的东西，如Java的虚拟机。Java编译后会产生统一的字节码，我的理解是字节码就相当于为指令集提供了一种抽象，而Java在不同操作系统都提供了Java虚拟机，它负责把字节码转变为对应架构的指令集，转译成本地代码。相当于Java虚拟机代替我们完成了Ports的机制处理，实现了一次编写，到处运行。然而Java的二次转译也意味着同样流程的程序分别使用C&#x2F;C++与Java编写，执行效率一般来说不会超过C&#x2F;C++这样不需要经过二次转译的语言。</p>
+<h3 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h3><p>程序也占内存，浩如烟海的程序中往往也有很多实现了同样逻辑的api。这样数据就造成了冗余，浪费了内存。于是在windows中，动态链接库DLL解决了这样的问题。只需要提供了完成某些功能封装好的api，开发者只需要使用其api即可顺利完成其功能，并且所有需要实现此功能的程序都可以共同使用这个DLL，这也就减少了内存浪费。并且可以做到功能的局部更新（只需要更新相应的DLL文件即可）。</p>
+<h3 id="伪随机数"><a href="#伪随机数" class="headerlink" title="伪随机数"></a>伪随机数</h3><p>随机数也并不是真随机，而是借助计算公式得出。如果提供一致的参数，理论上可以推演出下一步的结果。</p>
+<h3 id="中断信号"><a href="#中断信号" class="headerlink" title="中断信号"></a>中断信号</h3><p>中断是异步编程的通信方式。CPU一旦接到中断型号，就会把寄存器中所有的数据保存在内存的栈中，然后执行中断处理程序。执行中断程序完毕后，则将栈中数据弹出。这样就完成了上下文的切换。而为了防止多个设备同时进行中断请求，所以计算机引入了中断控制器来进行缓冲，将中断请求有序的传递给CPU。</p>
+<hr>
+<p>看完这本书，大概花了我大半个月的时间，我几乎是在这本书中重新学了一遍计算机组成原理。我知道这本书里面的很多内容其实没有细致的讲解，但至少让我对程序是如何跑起来这一个概念有了一些认识，我觉得还是有所收获的。面对计算机底层知识，也不会再让我恐惧。</p>
+<p>大一大二时我一直不太理解为什么我一个学习软件的，还要去了解硬件层面的知识。现在我大概明白，我曾经追求的各种新鲜技术，各种的猎奇。这只不过是学习上层提供的各种api，拿着他们已经做好的工具，去搭积木。提供积木的品牌很多，但仅仅局限于使用这样的积木，自始自终，我也不会有朝一日实现自己积木的那一天。<br>上层的工具时刻都在变化，而不便的，永远是下层建筑最经典的智慧。</p>
+<p>或许这篇日后还会更新呢? 我也很期待~</p>
+<h3 id="碎碎话"><a href="#碎碎话" class="headerlink" title="碎碎话"></a>碎碎话</h3><blockquote>
+<p>每一次伟大的认知，都源于对这个世界的不解。</p>
+</blockquote>
+<p><em>2022年5月22日于寝室</em></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://class-undefined.cn">野漫横江</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://class-undefined.cn/posts/cl3h5g2uq000b98km3ujp1nua/">https://class-undefined.cn/posts/cl3h5g2uq000b98km3ujp1nua/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://class-undefined.cn" target="_blank">野漫横江</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/628776bc09475431295fc8b2.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://unpkg.com/social-share.js@1.0.16/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="https://pic.imgdb.cn/item/628776bc09475431295fc8db.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628776bc09475431295fc8db.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://pic.imgdb.cn/item/628776bc09475431295fc8d3.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628776bc09475431295fc8d3.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/cl3h5g2uo000698km8pqka614/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628777840947543129603800.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">哈夫曼树的构建</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://q1.qlogo.cn/g?b=qq&amp;nk=1399226280&amp;s=640" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">野漫横江</div><div class="author-info__description">人海浮沉几万里,此心安处是吾乡.</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">9</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/class-undefined"><i class="fab fa-github"></i><span>关注我</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">这些是我的随笔, 也希望对你有所助力.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80%E4%B8%AD%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E8%A1%A8%E7%A4%BA%E7%9A%84%E6%84%8F%E4%B9%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">高级程序语言中变量的数据类型表示的意义是什么？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%88"><span class="toc-number">2.</span> <span class="toc-text">栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%9F%E5%88%97"><span class="toc-number">3.</span> <span class="toc-text">队列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%98%AF%E4%BA%8C%E8%BF%9B%E5%88%B6%EF%BC%9F"><span class="toc-number">4.</span> <span class="toc-text">为什么计算机是二进制？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81%E4%BB%8E%E4%BD%95%E8%80%8C%E6%9D%A5%EF%BC%9F"><span class="toc-number">5.</span> <span class="toc-text">补码从何而来？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">浮点数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E7%A0%81"><span class="toc-number">7.</span> <span class="toc-text">编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%83%E7%94%A8%E6%A0%88"><span class="toc-number">8.</span> <span class="toc-text">调用栈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A1%AC%E7%9B%98"><span class="toc-number">9.</span> <span class="toc-text">硬盘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8E%8B%E7%BC%A9"><span class="toc-number">10.</span> <span class="toc-text">数据压缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E8%B7%A8%E5%B9%B3%E5%8F%B0"><span class="toc-number">11.</span> <span class="toc-text">程序跨平台</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93"><span class="toc-number">12.</span> <span class="toc-text">动态链接库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%AA%E9%9A%8F%E6%9C%BA%E6%95%B0"><span class="toc-number">13.</span> <span class="toc-text">伪随机数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%AD%E4%BF%A1%E5%8F%B7"><span class="toc-number">14.</span> <span class="toc-text">中断信号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A2%8E%E7%A2%8E%E8%AF%9D"><span class="toc-number">15.</span> <span class="toc-text">碎碎话</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/cl3h5g2uq000b98km3ujp1nua/" title="程序是怎样跑起来的"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628776bc09475431295fc8b2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="程序是怎样跑起来的"/></a><div class="content"><a class="title" href="/posts/cl3h5g2uq000b98km3ujp1nua/" title="程序是怎样跑起来的">程序是怎样跑起来的</a><time datetime="2022-05-22T10:19:58.000Z" title="发表于 2022-05-22 18:19:58">2022-05-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cl3h5g2uo000698km8pqka614/" title="哈夫曼树的构建"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628777840947543129603800.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="哈夫曼树的构建"/></a><div class="content"><a class="title" href="/posts/cl3h5g2uo000698km8pqka614/" title="哈夫曼树的构建">哈夫曼树的构建</a><time datetime="2022-05-18T14:41:18.000Z" title="发表于 2022-05-18 22:41:18">2022-05-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cl3h5g2ul000398kmeh7r51db/" title="为何大文件的移动速度会更快?"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628776bc09475431295fc8c9.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="为何大文件的移动速度会更快?"/></a><div class="content"><a class="title" href="/posts/cl3h5g2ul000398kmeh7r51db/" title="为何大文件的移动速度会更快?">为何大文件的移动速度会更快?</a><time datetime="2022-05-17T07:00:16.000Z" title="发表于 2022-05-17 15:00:16">2022-05-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cl3h5g2ur000c98kmh8didvq9/" title="剑指 Offer 10- II. 青蛙跳台阶问题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/628776bc09475431295fc8ba.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="剑指 Offer 10- II. 青蛙跳台阶问题"/></a><div class="content"><a class="title" href="/posts/cl3h5g2ur000c98kmh8didvq9/" title="剑指 Offer 10- II. 青蛙跳台阶问题">剑指 Offer 10- II. 青蛙跳台阶问题</a><time datetime="2022-05-15T03:22:55.000Z" title="发表于 2022-05-15 11:22:55">2022-05-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cl3h5g2up000998kmalu8duxq/" title="433. 最小基因变化"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic.imgdb.cn/item/62877a0d094754312961ccf1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="433. 最小基因变化"/></a><div class="content"><a class="title" href="/posts/cl3h5g2up000998kmalu8duxq/" title="433. 最小基因变化">433. 最小基因变化</a><time datetime="2022-05-14T14:16:48.000Z" title="发表于 2022-05-14 22:16:48">2022-05-14</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By 野漫横江</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://unpkg.com/@fancyapps/ui@4.0.27/dist/fancybox.umd.js"></script><script src="https://unpkg.com/vanilla-lazyload@17.8.1/dist/lazyload.iife.min.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/node-snackbar/0.1.9/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://unpkg.com/pangu@4/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.6.2/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '08769144a6d9510fa8b0',
+      clientSecret: '5c2054d59f3bc9b815b6d0ba6a811e22fdad130f',
+      repo: 'class-undefined.github.io',
+      owner: 'class-undefined',
+      admin: ['class-undefined'],
+      id: '78b155b4371c23fa18cbf2db8fc02214',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://unpkg.com/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Gitalk' === 'Gitalk' || !false) {
+  if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://unpkg.com/butterfly-extsrc@1.1.1/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
